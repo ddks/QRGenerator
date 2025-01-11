@@ -1,0 +1,362 @@
+kotlin version: 2.0.0
+error message: org.jetbrains.kotlin.backend.common.BackendException: Backend Internal error: Exception during IR lowering
+File being compiled: C:/Users/david/AndroidStudioProjects/QRGenerator/app/src/main/java/com/example/qrgenerator/MainActivity.kt
+The root cause java.lang.RuntimeException was thrown at: org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException(CodegenUtil.kt:253)
+	at org.jetbrains.kotlin.backend.common.CodegenUtil.reportBackendException$default(CodegenUtil.kt:236)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:65)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:52)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invoke(performByIrFile.kt:38)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:29)
+	at org.jetbrains.kotlin.backend.common.phaser.CompositePhase.invoke(PhaseBuilders.kt:16)
+	at org.jetbrains.kotlin.backend.common.phaser.NamedCompilerPhase.phaseBody(CompilerPhase.kt:166)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.CompilerPhaseKt.invokeToplevel(CompilerPhase.kt:62)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.invokeCodegen(JvmIrCodegenFactory.kt:371)
+	at org.jetbrains.kotlin.codegen.CodegenFactory.generateModule(CodegenFactory.kt:47)
+	at org.jetbrains.kotlin.backend.jvm.JvmIrCodegenFactory.generateModuleInFrontendIRMode(JvmIrCodegenFactory.kt:433)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.generateCodeFromIr(jvmCompilerPipeline.kt:241)
+	at org.jetbrains.kotlin.cli.jvm.compiler.pipeline.JvmCompilerPipelineKt.compileModulesUsingFrontendIrAndLightTree(jvmCompilerPipeline.kt:140)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:155)
+	at org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.doExecute(K2JVMCompiler.kt:50)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:104)
+	at org.jetbrains.kotlin.cli.common.CLICompiler.execImpl(CLICompiler.kt:48)
+	at org.jetbrains.kotlin.cli.common.CLITool.exec(CLITool.kt:101)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:453)
+	at org.jetbrains.kotlin.incremental.IncrementalJvmCompilerRunner.runCompiler(IncrementalJvmCompilerRunner.kt:62)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.doCompile(IncrementalCompilerRunner.kt:506)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compileImpl(IncrementalCompilerRunner.kt:423)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally$lambda$9$compile(IncrementalCompilerRunner.kt:249)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.tryCompileIncrementally(IncrementalCompilerRunner.kt:267)
+	at org.jetbrains.kotlin.incremental.IncrementalCompilerRunner.compile(IncrementalCompilerRunner.kt:120)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.execIncrementalCompiler(CompileServiceImpl.kt:676)
+	at org.jetbrains.kotlin.daemon.CompileServiceImplBase.access$execIncrementalCompiler(CompileServiceImpl.kt:92)
+	at org.jetbrains.kotlin.daemon.CompileServiceImpl.compile(CompileServiceImpl.kt:1661)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastServerRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport$1.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport.handleMessages(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.lambda$run$0(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCPTransport$ConnectionHandler.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN name:onCreate visibility:protected modality:OPEN <> ($this:com.example.qrgenerator.MainActivity, savedInstanceState:android.os.Bundle?) returnType:kotlin.Unit
+  overridden:
+    protected/*protected and package*/ open fun onCreate (p0: @[EnhancedNullability] android.os.Bundle?): kotlin.Unit [fake_override] declared in androidx.appcompat.app.AppCompatActivity
+  $this: VALUE_PARAMETER name:<this> type:com.example.qrgenerator.MainActivity
+  VALUE_PARAMETER name:savedInstanceState index:0 type:android.os.Bundle?
+  BLOCK_BODY
+    CALL 'protected/*protected and package*/ open fun onCreate (p0: @[EnhancedNullability] android.os.Bundle?): kotlin.Unit [fake_override] declared in androidx.appcompat.app.AppCompatActivity' superQualifier='CLASS IR_EXTERNAL_JAVA_DECLARATION_STUB CLASS name:AppCompatActivity modality:OPEN visibility:public superTypes:[androidx.fragment.app.FragmentActivity; androidx.appcompat.app.AppCompatCallback; androidx.core.app.TaskStackBuilder.SupportParentable; androidx.appcompat.app.ActionBarDrawerToggle.DelegateProvider]' type=kotlin.Unit origin=null
+      $this: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+      p0: GET_VAR 'savedInstanceState: android.os.Bundle? declared in com.example.qrgenerator.MainActivity.onCreate' type=android.os.Bundle? origin=null
+    VAR name:rootLayout type:android.widget.LinearLayout [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.LinearLayout origin=null
+        <T>: android.widget.LinearLayout
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.LinearLayout' type=android.widget.LinearLayout origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$0 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    VAR name:contentEditText type:android.widget.EditText [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.EditText origin=null
+        <T>: android.widget.EditText
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.EditText' type=android.widget.EditText origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.EditText, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$1 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.EditText, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val rootLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val contentEditText: android.widget.EditText [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.EditText origin=null
+    VAR name:versionRadioGroup type:android.widget.RadioGroup [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.RadioGroup origin=null
+        <T>: android.widget.RadioGroup
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.RadioGroup' type=android.widget.RadioGroup origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.RadioGroup, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$2 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.RadioGroup, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    VAR name:versions type:kotlin.Array<kotlin.String> [val]
+      BLOCK type=kotlin.Array<out kotlin.String> origin=null
+        VAR IR_TEMPORARY_VARIABLE name:tmp0 type:kotlin.Array<out kotlin.String> [val]
+          CALL 'public final fun arrayOfNulls <T> (size: kotlin.Int): kotlin.Array<T of kotlin.arrayOfNulls?> declared in kotlin' type=kotlin.Array<out kotlin.String> origin=null
+            <T>: kotlin.String
+            size: CONST Int type=kotlin.Int value=4
+        CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+          $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=kotlin.Array<out kotlin.String> origin=null
+          index: CONST Int type=kotlin.Int value=0
+          value: CONST String type=kotlin.String value="21x21"
+        CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+          $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=kotlin.Array<out kotlin.String> origin=null
+          index: CONST Int type=kotlin.Int value=1
+          value: CONST String type=kotlin.String value="25x25"
+        CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+          $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=kotlin.Array<out kotlin.String> origin=null
+          index: CONST Int type=kotlin.Int value=2
+          value: CONST String type=kotlin.String value="29x29"
+        CALL 'public final fun set (index: kotlin.Int, value: T of kotlin.Array): kotlin.Unit [operator] declared in kotlin.Array' type=kotlin.Unit origin=null
+          $this: GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=kotlin.Array<out kotlin.String> origin=null
+          index: CONST Int type=kotlin.Int value=3
+          value: CONST String type=kotlin.String value="33x33"
+        GET_VAR 'val tmp0: kotlin.Array<out kotlin.String> [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=kotlin.Array<out kotlin.String> origin=null
+    CALL 'public final fun forEachIndexed <T> (action: kotlin.Function2<@[ParameterName(name = "index")] kotlin.Int, T of kotlin.collections.ArraysKt.forEachIndexed, kotlin.Unit>): kotlin.Unit [inline] declared in kotlin.collections.ArraysKt' type=kotlin.Unit origin=null
+      <T>: kotlin.String
+      $receiver: GET_VAR 'val versions: kotlin.Array<kotlin.String> [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=kotlin.Array<kotlin.String> origin=null
+      action: BLOCK type=kotlin.Function2<@[ParameterName(name = "index")] kotlin.Int, kotlin.String, kotlin.Unit> origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        FUNCTION_REFERENCE 'private final fun onCreate$lambda$4 (this$0: com.example.qrgenerator.MainActivity, $versionRadioGroup: android.widget.RadioGroup, index: @[ParameterName(name = "index")] kotlin.Int, version: kotlin.String): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=kotlin.Function2<@[ParameterName(name = "index")] kotlin.Int, kotlin.String, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+          this$0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+          $versionRadioGroup: GET_VAR 'val versionRadioGroup: android.widget.RadioGroup [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.RadioGroup origin=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val rootLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val versionRadioGroup: android.widget.RadioGroup [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.RadioGroup origin=null
+    VAR name:qrCodeImageView type:android.widget.ImageView [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.ImageView origin=null
+        <T>: android.widget.ImageView
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.ImageView' type=android.widget.ImageView origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.ImageView, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$6 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.ImageView, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val rootLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val qrCodeImageView: android.widget.ImageView [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.ImageView origin=null
+    VAR name:buttonLayout type:android.widget.LinearLayout [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.LinearLayout origin=null
+        <T>: android.widget.LinearLayout
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.LinearLayout' type=android.widget.LinearLayout origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$7 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.LinearLayout, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    VAR name:clearButton type:android.widget.Button [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.Button origin=null
+        <T>: android.widget.Button
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.Button' type=android.widget.Button origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.Button, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$8 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.Button, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val buttonLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val clearButton: android.widget.Button [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.Button origin=null
+    VAR name:shareButton type:android.widget.Button [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.Button origin=null
+        <T>: android.widget.Button
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.Button' type=android.widget.Button origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.Button, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$9 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.Button, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val buttonLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val shareButton: android.widget.Button [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.Button origin=null
+    VAR name:closeButton type:android.widget.Button [val]
+      CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.widget.Button origin=null
+        <T>: android.widget.Button
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: @[FlexibleNullability] android.content.Context?) declared in android.widget.Button' type=android.widget.Button origin=null
+          p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.widget.Button, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$10 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.widget.Button, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val buttonLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val closeButton: android.widget.Button [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.Button origin=null
+    CALL 'public open fun addView (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in android.widget.LinearLayout' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val rootLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+      p0: GET_VAR 'val buttonLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+    CALL 'public open fun setContentView (p0: @[EnhancedNullability] android.view.View?): kotlin.Unit [fake_override] declared in com.example.qrgenerator.MainActivity' type=kotlin.Unit origin=null
+      $this: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+      p0: GET_VAR 'val rootLayout: android.widget.LinearLayout [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.LinearLayout origin=null
+    CALL 'public open fun setOnCheckedChangeListener (p0: @[FlexibleNullability] android.widget.RadioGroup.OnCheckedChangeListener?): kotlin.Unit declared in android.widget.RadioGroup' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val versionRadioGroup: android.widget.RadioGroup [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.RadioGroup origin=null
+      p0: BLOCK type=android.widget.RadioGroup.OnCheckedChangeListener origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.widget.RadioGroup.OnCheckedChangeListener origin=null
+          <T>: android.widget.RadioGroup.OnCheckedChangeListener
+          dynamicCall: CALL 'public final fun onCheckedChanged (p0: android.widget.EditText, p1: com.example.qrgenerator.MainActivity, p2: android.widget.ImageView): android.widget.RadioGroup.OnCheckedChangeListener declared in kotlin.jvm.internal.invokeDynamic' type=android.widget.RadioGroup.OnCheckedChangeListener origin=null
+            p0: GET_VAR 'val contentEditText: android.widget.EditText [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.EditText origin=null
+            p1: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+            p2: GET_VAR 'val qrCodeImageView: android.widget.ImageView [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.ImageView origin=null
+          bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+            tag: CONST Int type=kotlin.Int value=6
+            owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+            name: CONST String type=kotlin.String value="metafactory"
+            descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+            isInterface: CONST Boolean type=kotlin.Boolean value=false
+          bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onCheckedChanged (p0: @[FlexibleNullability] android.widget.RadioGroup?, p1: kotlin.Int): kotlin.Unit declared in android.widget.RadioGroup.OnCheckedChangeListener' type=kotlin.Any
+            RAW_FUNCTION_REFERENCE 'private final fun onCreate$lambda$11 ($contentEditText: android.widget.EditText, this$0: com.example.qrgenerator.MainActivity, $qrCodeImageView: android.widget.ImageView, <unused var>: @[FlexibleNullability] android.widget.RadioGroup?, checkedId: kotlin.Int): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onCheckedChanged (p0: @[FlexibleNullability] android.widget.RadioGroup?, p1: kotlin.Int): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+    CALL 'public open fun setOnClickListener (p0: @[EnhancedNullability] android.view.View.OnClickListener?): kotlin.Unit [fake_override] declared in android.widget.Button' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val clearButton: android.widget.Button [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.Button origin=null
+      p0: BLOCK type=android.view.View.OnClickListener origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnClickListener origin=null
+          <T>: android.view.View.OnClickListener
+          dynamicCall: CALL 'public final fun onClick (p0: android.widget.EditText, p1: android.widget.ImageView): android.view.View.OnClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnClickListener origin=null
+            p0: GET_VAR 'val contentEditText: android.widget.EditText [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.EditText origin=null
+            p1: GET_VAR 'val qrCodeImageView: android.widget.ImageView [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.ImageView origin=null
+          bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+            tag: CONST Int type=kotlin.Int value=6
+            owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+            name: CONST String type=kotlin.String value="metafactory"
+            descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+            isInterface: CONST Boolean type=kotlin.Boolean value=false
+          bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in android.view.View.OnClickListener' type=kotlin.Any
+            RAW_FUNCTION_REFERENCE 'private final fun onCreate$lambda$12 ($contentEditText: android.widget.EditText, $qrCodeImageView: android.widget.ImageView, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+    CALL 'public open fun setOnClickListener (p0: @[EnhancedNullability] android.view.View.OnClickListener?): kotlin.Unit [fake_override] declared in android.widget.Button' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val shareButton: android.widget.Button [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.Button origin=null
+      p0: BLOCK type=android.view.View.OnClickListener origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnClickListener origin=null
+          <T>: android.view.View.OnClickListener
+          dynamicCall: CALL 'public final fun onClick (p0: com.example.qrgenerator.MainActivity): android.view.View.OnClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnClickListener origin=null
+            p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+          bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+            tag: CONST Int type=kotlin.Int value=6
+            owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+            name: CONST String type=kotlin.String value="metafactory"
+            descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+            isInterface: CONST Boolean type=kotlin.Boolean value=false
+          bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in android.view.View.OnClickListener' type=kotlin.Any
+            RAW_FUNCTION_REFERENCE 'private final fun onCreate$lambda$13 (this$0: com.example.qrgenerator.MainActivity, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+    CALL 'public open fun setOnClickListener (p0: @[EnhancedNullability] android.view.View.OnClickListener?): kotlin.Unit [fake_override] declared in android.widget.Button' type=kotlin.Unit origin=null
+      $this: GET_VAR 'val closeButton: android.widget.Button [val] declared in com.example.qrgenerator.MainActivity.onCreate' type=android.widget.Button origin=null
+      p0: BLOCK type=android.view.View.OnClickListener origin=LAMBDA
+        COMPOSITE type=kotlin.Unit origin=null
+        CALL 'public final fun <jvm-indy> <T> (dynamicCall: T of kotlin.jvm.internal.<jvm-indy>, bootstrapMethodHandle: kotlin.Any, vararg bootstrapMethodArguments: kotlin.Any): T of kotlin.jvm.internal.<jvm-indy> declared in kotlin.jvm.internal' type=android.view.View.OnClickListener origin=null
+          <T>: android.view.View.OnClickListener
+          dynamicCall: CALL 'public final fun onClick (p0: com.example.qrgenerator.MainActivity): android.view.View.OnClickListener declared in kotlin.jvm.internal.invokeDynamic' type=android.view.View.OnClickListener origin=null
+            p0: GET_VAR '<this>: com.example.qrgenerator.MainActivity declared in com.example.qrgenerator.MainActivity.onCreate' type=com.example.qrgenerator.MainActivity origin=null
+          bootstrapMethodHandle: CALL 'public final fun <jvm-method-handle> (tag: kotlin.Int, owner: kotlin.String, name: kotlin.String, descriptor: kotlin.String, isInterface: kotlin.Boolean): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+            tag: CONST Int type=kotlin.Int value=6
+            owner: CONST String type=kotlin.String value="java/lang/invoke/LambdaMetafactory"
+            name: CONST String type=kotlin.String value="metafactory"
+            descriptor: CONST String type=kotlin.String value="(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;"
+            isInterface: CONST Boolean type=kotlin.Boolean value=false
+          bootstrapMethodArguments: VARARG type=kotlin.Array<kotlin.Any> varargElementType=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in android.view.View.OnClickListener' type=kotlin.Any
+            RAW_FUNCTION_REFERENCE 'private final fun onCreate$lambda$14 (this$0: com.example.qrgenerator.MainActivity, it: @[FlexibleNullability] android.view.View?): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=kotlin.Any
+            CALL 'public final fun <jvm-original-method-type> (method: kotlin.Any): kotlin.Any declared in kotlin.jvm.internal' type=kotlin.Any origin=null
+              method: RAW_FUNCTION_REFERENCE 'public abstract fun onClick (p0: @[FlexibleNullability] android.view.View?): kotlin.Unit [fake_override] declared in kotlin.jvm.internal.invokeDynamic.<fake>' type=kotlin.Any
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate$default(FunctionCodegen.kt:42)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethodNode(ClassCodegen.kt:385)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generateMethod(ClassCodegen.kt:402)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ClassCodegen.generate(ClassCodegen.kt:169)
+	at org.jetbrains.kotlin.backend.jvm.FileCodegen.lower(JvmPhases.kt:41)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt.makeIrFilePhase$lambda$5(PhaseBuilders.kt:114)
+	at org.jetbrains.kotlin.backend.common.phaser.PhaseBuildersKt$createSimpleNamedCompilerPhase$1.phaseBody(PhaseBuilders.kt:71)
+	at org.jetbrains.kotlin.backend.common.phaser.SimpleNamedCompilerPhase.phaseBody(CompilerPhase.kt:226)
+	at org.jetbrains.kotlin.backend.common.phaser.AbstractNamedCompilerPhase.invoke(CompilerPhase.kt:113)
+	at org.jetbrains.kotlin.backend.common.phaser.PerformByIrFilePhase.invokeSequential(performByIrFile.kt:62)
+	... 44 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:onCreate$lambda$6 visibility:private modality:FINAL <> ($receiver:android.widget.ImageView) returnType:kotlin.Unit
+  $receiver: VALUE_PARAMETER name:$this$apply type:android.widget.ImageView
+  BLOCK_BODY
+    VAR name:$i$a$-apply-MainActivity$onCreate$qrCodeImageView$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    CALL 'public open fun setLayoutParams (p0: @[FlexibleNullability] android.view.ViewGroup.LayoutParams?): kotlin.Unit [fake_override] declared in android.widget.ImageView' type=kotlin.Unit origin=EQ
+      $this: GET_VAR '$this$apply: android.widget.ImageView declared in com.example.qrgenerator.MainActivity.onCreate$lambda$6' type=android.widget.ImageView origin=null
+      p0: CALL 'public final fun apply <T> (block: @[ExtensionFunctionType] kotlin.Function1<T of kotlin.StandardKt.apply, kotlin.Unit>): T of kotlin.StandardKt.apply [inline] declared in kotlin.StandardKt' type=android.view.ViewGroup.LayoutParams origin=null
+        <T>: android.view.ViewGroup.LayoutParams
+        $receiver: CONSTRUCTOR_CALL 'public constructor <init> (p0: kotlin.Int, p1: kotlin.Int) declared in android.view.ViewGroup.LayoutParams' type=android.view.ViewGroup.LayoutParams origin=null
+          p0: CONST Int type=kotlin.Int value=200
+          p1: CONST Int type=kotlin.Int value=200
+        block: BLOCK type=@[ExtensionFunctionType] kotlin.Function1<android.view.ViewGroup.LayoutParams, kotlin.Unit> origin=LAMBDA
+          COMPOSITE type=kotlin.Unit origin=null
+          FUNCTION_REFERENCE 'private final fun onCreate$lambda$6$lambda$5 (): kotlin.Unit declared in com.example.qrgenerator.MainActivity' type=@[ExtensionFunctionType] kotlin.Function1<android.view.ViewGroup.LayoutParams, kotlin.Unit> origin=INLINE_LAMBDA reflectionTarget=null
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:67)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:99)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:610)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:638)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:784)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitVariable(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.declarations.IrVariable.accept(IrVariable.kt:36)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 54 more
+Caused by: java.lang.RuntimeException: Exception while generating code for:
+FUN INLINE_LAMBDA name:onCreate$lambda$6$lambda$5 visibility:private modality:FINAL <> ($receiver:android.view.ViewGroup.LayoutParams) returnType:kotlin.Unit
+  $receiver: VALUE_PARAMETER name:$this$apply type:android.view.ViewGroup.LayoutParams
+  BLOCK_BODY
+    VAR name:$i$a$-apply-MainActivity$onCreate$qrCodeImageView$1$1 type:kotlin.Int [val]
+      CONST Int type=kotlin.Int value=0
+    SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:gravity type:kotlin.Int visibility:public [final,static]' type=kotlin.Unit origin=EQ
+      value: CONST Int type=kotlin.Int value=17
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:50)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrSourceCompilerForInline.generateLambdaBody(IrSourceCompilerForInline.kt:67)
+	at org.jetbrains.kotlin.codegen.inline.ExpressionLambda.generateLambdaBody(LambdaInfo.kt:72)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrInlineCodegen.genValueAndPut(IrInlineCodegen.kt:99)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:610)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:638)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.gen(ExpressionCodegen.kt:216)
+	at org.jetbrains.kotlin.backend.jvm.codegen.IrCallGenerator.genValueAndPut(IrCallGenerator.kt:48)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall$handleParameter(ExpressionCodegen.kt:610)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:638)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitCall(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrCall.accept(IrCall.kt:24)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 71 more
+Caused by: java.lang.AssertionError: access of const val: SET_FIELD 'FIELD IR_EXTERNAL_JAVA_DECLARATION_STUB name:gravity type:kotlin.Int visibility:public [final,static]' type=kotlin.Unit origin=EQ
+  value: CONST Int type=kotlin.Int value=17
+
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:855)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitFieldAccess(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.visitors.IrElementVisitor$DefaultImpls.visitSetField(IrElementVisitor.kt:206)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:902)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitSetField(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrSetField.accept(IrSetField.kt:21)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitStatementContainer(ExpressionCodegen.kt:573)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:578)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.visitBlockBody(ExpressionCodegen.kt:137)
+	at org.jetbrains.kotlin.ir.expressions.IrBlockBody.accept(IrBlockBody.kt:20)
+	at org.jetbrains.kotlin.backend.jvm.codegen.ExpressionCodegen.generate(ExpressionCodegen.kt:239)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.doGenerate(FunctionCodegen.kt:121)
+	at org.jetbrains.kotlin.backend.jvm.codegen.FunctionCodegen.generate(FunctionCodegen.kt:46)
+	... 91 more
+
+
